@@ -33,7 +33,6 @@ public class AddTourist extends AppCompatActivity {
     Database database;
     int REQUEST_CODE_CAMERA = 123;
     int REQUEST_CODE_FOLDER = 456;
-    private String currentPhotoPath;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

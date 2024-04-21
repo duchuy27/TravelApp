@@ -1,21 +1,11 @@
 package com.android.travelapp.Model;
 
 public class touristModel {
-    private int id;
     private String al_name_tour;
     private int al_price_tour;
     private byte[] al_img_tour;
     private String al_desc_tour;
     private String al_location;
-
-    public touristModel(int Id, String al_name_tour, int al_price_tour, byte[] al_img_tour, String al_desc_tour, String al_location) {
-        this.id  = Id;
-        this.al_img_tour = al_img_tour;
-        this.al_name_tour = al_name_tour;
-        this.al_desc_tour = al_desc_tour;
-        this.al_price_tour = al_price_tour;
-        this.al_location = al_location;
-    }
 
     public touristModel(String al_name_tour, int al_price_tour, byte[] al_img_tour, String al_desc_tour, String al_location) {
         this.al_name_tour = al_name_tour;
@@ -31,14 +21,6 @@ public class touristModel {
 
     public void setAl_img_tour(byte[] al_img_tour) {
         this.al_img_tour = al_img_tour;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getAl_name_tour() {

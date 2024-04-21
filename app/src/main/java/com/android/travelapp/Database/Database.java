@@ -14,9 +14,8 @@ import java.util.ArrayList;
 
 public class Database extends SQLiteOpenHelper {
     private static final int Database_version = 1;
-    private static final String Database_name = "travel_app_test";
+    private static final String Database_name = "travel_app_test_1";
     private static final String Table_tourist = "Tourist";
-    private static final String Column_id = "Id";
     private static final String Column_name = "Name";
     private static final String Column_price = "Price";
     private static final String Column_img = "Img";
@@ -31,9 +30,8 @@ public class Database extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         String Create_tourist_table = "CREATE TABLE " +
-                Table_tourist + "(" + Column_id +
-                " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                Column_name + " VARCHAR(100), " +
+                Table_tourist + "(" +
+                Column_name + " VARCHAR(100) PRIMARY KEY, " +
                 Column_price + " INTEGER, " +
                 Column_img + " BLOB, " +
                 Column_describe + " VARCHAR(200), " +
@@ -46,6 +44,7 @@ public class Database extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("drop Table if exists " + Table_tourist);
         onCreate(sqLiteDatabase);
     }
+
     public ArrayList<touristModel> listTourist(){
         String sql = "select * from " + Table_tourist;
         SQLiteDatabase db = this.getReadableDatabase();
@@ -53,13 +52,12 @@ public class Database extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(sql, null);
         if (cursor.moveToFirst()) {
             do {
-                int id = cursor.getInt(0);
-                String name_tour = cursor.getString(1);
-                int price_tour = cursor.getInt(2);
-                byte[] img_tour = cursor.getBlob(3);
-                String desc_tour = cursor.getString(4);
-                String location = cursor.getString(5);
-                touristModelList.add(new touristModel(id, name_tour, price_tour, img_tour, desc_tour, location));
+                String name_tour = cursor.getString(0);
+                int price_tour = cursor.getInt(1);
+                byte[] img_tour = cursor.getBlob(2);
+                String desc_tour = cursor.getString(3);
+                String location = cursor.getString(4);
+                touristModelList.add(new touristModel(name_tour, price_tour, img_tour, desc_tour, location));
             }
             while (cursor.moveToNext());
         }
@@ -76,6 +74,26 @@ public class Database extends SQLiteOpenHelper {
         contentValues.put(Column_describe,touristModel.getAl_desc_tour());
         contentValues.put(Column_location, touristModel.getAl_location());
         long result = database.insert(Table_tourist, null, contentValues);
+        return result != -1;
+    }
+
+    public Boolean deleteTouristData(String name_tour){
+        SQLiteDatabase database = this.getWritableDatabase();
+
+        long result = database.delete(Table_tourist, "Name=?", new String[]{name_tour});
+
+        return result != -1;
+    }
+
+    public Boolean updataTourist(touristModel touristModel){
+        SQLiteDatabase database = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(Column_name, touristModel.getAl_name_tour());
+        contentValues.put(Column_price, touristModel.getAl_price_tour());
+        contentValues.put(Column_img, touristModel.getAl_img_tour());
+        contentValues.put(Column_describe,touristModel.getAl_desc_tour());
+        contentValues.put(Column_location, touristModel.getAl_location());
+        long result = database.update(Table_tourist, contentValues, "Id=?", new String[]{touristModel.getAl_name_tour()});
         return result != -1;
     }
 }
