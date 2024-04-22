@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/aliey_regular"
                 android:text="Receipt"
-                android:textColor="@color/bgColorSplash"
+                android:textColor="@color/red"
                 android:textSize="40dp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -65,7 +65,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    android:background="@color/bgColorSplash">
+                    android:background="@color/red">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -156,7 +156,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:gravity="center"
-                    android:background="@color/bgColorSplash">
+                    android:background="@color/red">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -283,7 +283,7 @@
                     android:id="@+id/btn_confirm"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@color/bgColorSplash"
+                    android:backgroundTint="@color/red"
                     android:text="CONFIRM"
                     android:textColor="@color/white"
                     android:textSize="18dp"

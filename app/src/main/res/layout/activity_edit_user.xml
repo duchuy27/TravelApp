@@ -165,7 +165,7 @@
         android:id="@+id/btn_update"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/bgColorSplash"
+        android:backgroundTint="@color/red"
         android:text="UPDATE"
         android:textColor="@color/white"
         android:textStyle="bold"

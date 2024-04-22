@@ -43,7 +43,7 @@
                 android:id="@+id/btn_AddTour"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:backgroundTint="@color/bgColorSplash"
+                android:backgroundTint="@color/red"
                 android:text="＋"
                 android:textColor="@color/white"
                 android:textSize="20dp"

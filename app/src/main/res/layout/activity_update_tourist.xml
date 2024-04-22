@@ -174,7 +174,7 @@
                 android:id="@+id/btn_update_tourist"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/bgColorSplash"
+                android:backgroundTint="@color/red"
                 android:text="UPDATE TOURIST"
                 android:textColor="@color/white"
                 android:textStyle="bold"

@@ -119,7 +119,7 @@
                 android:layout_height="wrap_content"
                 android:transitionName="txt_login_signup"
                 android:text="LOG IN"
-                android:backgroundTint="@color/bgColorSplash"
+                android:backgroundTint="@color/red"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:layout_marginBottom="5dp"/>
@@ -144,7 +144,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Sign Up"
-                    android:textColor="@color/btnLink"
+                    android:textColor="@color/blue"
                     android:textSize="15dp"/>
             </LinearLayout>
 
