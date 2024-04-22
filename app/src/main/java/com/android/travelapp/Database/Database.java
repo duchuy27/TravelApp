@@ -6,9 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import androidx.annotation.Nullable;
-
-import com.android.travelapp.Model.touristModel;
+import com.android.travelapp.Model.TouristModel;
 
 import java.util.ArrayList;
 
@@ -21,7 +19,7 @@ public class Database extends SQLiteOpenHelper {
     private static final String Column_img = "Img";
     private static final String Column_describe = "Describe";
     private static final String Column_location = "Location";
-    public ArrayList<touristModel> listTourist;
+    public ArrayList<TouristModel> listTourist;
 
     public Database(Context context) {
         super(context, Database_name, null, Database_version);
@@ -45,10 +43,10 @@ public class Database extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
     }
 
-    public ArrayList<touristModel> listTourist(){
+    public ArrayList<TouristModel> listTourist(){
         String sql = "select * from " + Table_tourist;
         SQLiteDatabase db = this.getReadableDatabase();
-        ArrayList<touristModel> touristModelList = new ArrayList<>();
+        ArrayList<TouristModel> touristModelList = new ArrayList<>();
         Cursor cursor = db.rawQuery(sql, null);
         if (cursor.moveToFirst()) {
             do {
@@ -57,7 +55,7 @@ public class Database extends SQLiteOpenHelper {
                 byte[] img_tour = cursor.getBlob(2);
                 String desc_tour = cursor.getString(3);
                 String location = cursor.getString(4);
-                touristModelList.add(new touristModel(name_tour, price_tour, img_tour, desc_tour, location));
+                touristModelList.add(new TouristModel(name_tour, price_tour, img_tour, desc_tour, location));
             }
             while (cursor.moveToNext());
         }
@@ -65,7 +63,7 @@ public class Database extends SQLiteOpenHelper {
         return touristModelList;
     }
 
-    public Boolean addTouristData(touristModel touristModel){
+    public Boolean addTouristData(TouristModel touristModel){
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(Column_name, touristModel.getAl_name_tour());
@@ -85,7 +83,7 @@ public class Database extends SQLiteOpenHelper {
         return result != -1;
     }
 
-    public Boolean updataTourist(touristModel touristModel){
+    public Boolean updateTouristData(String Name_tour, TouristModel touristModel){
         SQLiteDatabase database = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(Column_name, touristModel.getAl_name_tour());
@@ -93,7 +91,7 @@ public class Database extends SQLiteOpenHelper {
         contentValues.put(Column_img, touristModel.getAl_img_tour());
         contentValues.put(Column_describe,touristModel.getAl_desc_tour());
         contentValues.put(Column_location, touristModel.getAl_location());
-        long result = database.update(Table_tourist, contentValues, "Id=?", new String[]{touristModel.getAl_name_tour()});
+        long result = database.update(Table_tourist, contentValues, "Name=?", new String[]{Name_tour});
         return result != -1;
     }
 }

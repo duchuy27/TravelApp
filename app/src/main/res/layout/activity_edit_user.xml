@@ -8,7 +8,7 @@
     android:padding="10dp"
     android:gravity="center"
     android:background="@color/white"
-    tools:context=".ui.EditUser">
+    tools:context=".Ui.EditUser">
 
     <androidx.cardview.widget.CardView
         android:layout_width="100dp"

@@ -13,7 +13,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.android.travelapp.ui.LoginPage;
+import com.android.travelapp.Ui.LoginPage;
 
 public class MainActivity extends AppCompatActivity {
     private static int SPLASH_SCREEN = 3000;

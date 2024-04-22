@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:orientation="vertical"
-        tools:context=".ui.Receipt">
+        tools:context=".Ui.Receipt">
 
         <LinearLayout
             android:layout_width="match_parent"

@@ -8,7 +8,7 @@
     android:background="@color/white"
     android:padding="10dp"
     android:gravity="center"
-    tools:context=".ui.SignUp">
+    tools:context=".Ui.SignUp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="120dp"

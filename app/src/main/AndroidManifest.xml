@@ -12,37 +12,40 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TravelApp">
         <activity
-            android:name=".ui.Tickets"
+            android:name=".Ui.Tickets"
             android:exported="false" />
         <activity
-            android:name=".ui.Receipt"
+            android:name=".Ui.Receipt"
             android:exported="false" />
         <activity
-            android:name=".ui.ForgotPass"
+            android:name=".Ui.ForgotPass"
             android:exported="false" />
         <activity
-            android:name=".ui.EditUser"
+            android:name=".Ui.EditUser"
             android:exported="false" />
         <activity
-            android:name=".ui.TourDetail"
+            android:name=".Ui.TourDetail"
             android:exported="false" />
         <activity
-            android:name=".ui.Dashboard"
+            android:name=".Ui.Dashboard"
             android:exported="false" />
         <activity
-            android:name=".ui.SignUp"
+            android:name=".Ui.SignUp"
             android:exported="false" />
         <activity
-            android:name=".ui.LoginPage"
+            android:name=".Ui.LoginPage"
             android:exported="false" />
         <activity
-            android:name=".ui.AddTourist"
+            android:name=".Ui.AddTourist"
             android:exported="false" />
         <activity
-            android:name=".ui.DeleteTourist"
+            android:name=".Ui.DeleteTourist"
             android:exported="false" />
         <activity
-            android:name=".ui.EditTourist"
+            android:name=".Ui.UpdateTourist"
+            android:exported="false" />
+        <activity
+            android:name=".Ui.EditTourist"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

@@ -9,7 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".ui.AddTourist">
+        tools:context=".Ui.AddTourist">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -19,7 +19,7 @@
             android:orientation="vertical"
             android:overScrollMode="always"
             android:padding="10dp"
-            tools:context=".ui.AddTourist"
+            tools:context=".Ui.AddTourist"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="-72dp">
 
@@ -38,7 +38,7 @@
             </androidx.cardview.widget.CardView>
 
             <TextView
-                android:id="@+id/tv_title_regis"
+                android:id="@+id/tv_title_add_tour"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="-10dp"

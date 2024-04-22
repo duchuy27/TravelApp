@@ -7,7 +7,7 @@
     android:background="@color/white"
     android:backgroundTint="#FFFFFF"
     android:orientation="vertical"
-    tools:context=".ui.Dashboard">
+    tools:context=".Ui.Dashboard">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
